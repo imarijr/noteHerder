@@ -13,6 +13,11 @@ class Main extends Component {
     }
   }
 
+  componentWillMount(){
+    const notes = JSON.parse(localStorage.getItem('notes'))
+    this.setState({notes: notes || []})
+  }
+
   blankNote = () => {
     return {
       id: null,
@@ -44,6 +49,12 @@ class Main extends Component {
     
 }
 
+  componentDidUpdate(){
+    localStorage.setItem('notes', JSON.stringify(this.state.notes))
+    
+    
+  }
+
   saveNote = (note) => {
     const notes = [...this.state.notes]
 
@@ -57,7 +68,7 @@ class Main extends Component {
       note.id = Date.now()
       notes.push(note)
     }
-    localStorage.setItem('notes', JSON.stringify(notes))
+    
     this.setState({ notes, currentNote: note })
   }
 

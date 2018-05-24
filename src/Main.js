@@ -38,7 +38,7 @@ class Main extends Component {
         this.setState({ notes })
     }
     
-    this.resetCurrentNote
+    this.resetCurrentNote()
     
 
     

@@ -10,7 +10,7 @@ import 'firebase/auth'
     authDomain: "note-herder-3fe33.firebaseapp.com",
     databaseURL: "https://note-herder-3fe33.firebaseio.com",
     projectId: "note-herder-3fe33",
-    storageBucket: "",
+    storageBucket: "note-herder-3fe33.appspot.com",
     messagingSenderId: "535020792140"
   }
   const app = firebase.initializeApp(config)

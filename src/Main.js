@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
+import base from './base'
 
 class Main extends Component {
   constructor() {
@@ -14,8 +15,11 @@ class Main extends Component {
   }
 
   componentWillMount(){
-    const notes = JSON.parse(localStorage.getItem('notes'))
-    this.setState({notes: notes || []})
+    base.syncState('notes',{
+      context: this,
+      state: 'notes',
+      asArray: true,
+    })
   }
 
   blankNote = () => {
@@ -51,8 +55,7 @@ class Main extends Component {
 
   componentDidUpdate(){
     localStorage.setItem('notes', JSON.stringify(this.state.notes))
-    
-    
+        
   }
 
   saveNote = (note) => {
@@ -78,7 +81,10 @@ class Main extends Component {
         className="Main"
         style={style}
       >
-        <Sidebar resetCurrentNote={this.resetCurrentNote} />
+        <Sidebar 
+        resetCurrentNote={this.resetCurrentNote} 
+        signOut = {this.props.signOut}
+        />
         <NoteList
           notes={this.state.notes}
           setCurrentNote={this.setCurrentNote}

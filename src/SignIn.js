@@ -3,7 +3,9 @@ import React from 'react'
 import'./SignIn.css'
 import quill from './quill.svg'
 import googleLogo from './google.svg'
-import {auth, githubProvider} from './base'
+import {auth, githubProvider, googleProvider} from './base'
+
+
 
 const SignIn = ({handleAuth}) => {
     const authenticate = (provider) => {
@@ -22,7 +24,7 @@ const SignIn = ({handleAuth}) => {
             <i class="fab fa-github"></i>
             Sign in with GitHub
           </button>
-          <button class="google" onClick = {() => {handleAuth}}>
+          <button class="google" onClick = {() => authenticate(googleProvider)}>
             <img src= {googleLogo} alt=""/>
             Sign in with Google
           </button>

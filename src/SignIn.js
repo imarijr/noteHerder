@@ -16,14 +16,14 @@ const SignIn = ({handleAuth}) => {
           <span class="title">Noteherder</span>
         </header>
         <main>
-          <h3>Hey, Nerd! You Like Notes?</h3>
-          <p>You never know when you'll need to write crap down. In fact, you should probably be taking notes right now.</p>
+          <h3>Hey, Nerd! You a little OCD?</h3>
+          <p>Take Notes!</p>
           <button class="github" onClick={() => authenticate(githubProvider)}>
             <i class="fab fa-github"></i>
             Sign in with GitHub
           </button>
-          <button class="google" onClick = {handleAuth}>
-            <img src="media/google.svg" alt=""/>
+          <button class="google" onClick = {() => {handleAuth}}>
+            <img src= {googleLogo} alt=""/>
             Sign in with Google
           </button>
         </main>

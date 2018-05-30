@@ -13,18 +13,18 @@ const SignIn = ({handleAuth}) => {
     }
     return(
         <div className="SignIn">
-        <header class="Header">
+        <header className="Header">
           <img src={quill} alt=""/>
-          <span class="title">Noteherder</span>
+          <span className="title">Noteherder</span>
         </header>
         <main>
           <h3>Hey, Nerd! You a little OCD?</h3>
           <p>Take Notes!</p>
-          <button class="github" onClick={() => authenticate(githubProvider)}>
-            <i class="fab fa-github"></i>
+          <button className="github" onClick={() => authenticate(githubProvider)}>
+            <i className="fab fa-github"></i>
             Sign in with GitHub
           </button>
-          <button class="google" onClick = {() => authenticate(googleProvider)}>
+          <button className="google" onClick = {() => authenticate(googleProvider)}>
             <img src= {googleLogo} alt=""/>
             Sign in with Google
           </button>
